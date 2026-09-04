@@ -1,0 +1,107 @@
+# ---------------------------------------------------------------------------
+# ICT 4442 HAR mini project — .gitignore
+#
+# Rule of thumb: ignore anything a teammate can regenerate (data, weights,
+# caches) and commit anything that is EVIDENCE (code, notebooks, metrics,
+# figures, the report). Contribution marks are checked against this history.
+# ---------------------------------------------------------------------------
+
+# --- Dataset ---------------------------------------------------------------
+# ~270 MB extracted. Never commit it. Everyone downloads from UCI dataset 240.
+data/
+!data/.gitkeep
+!data/README.md
+*.zip
+*.tar.gz
+
+# --- Model weights & checkpoints -------------------------------------------
+# Regenerable from a seed + config. LOSO alone produces 90 of these.
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.onnx
+*.pkl
+*.joblib
+checkpoints/
+saved_models/
+
+# --- Training logs & experiment tracking -----------------------------------
+runs/
+logs/
+lightning_logs/
+wandb/
+mlruns/
+events.out.tfevents.*
+*.log
+
+# --- KEEP results: these are your report evidence --------------------------
+# results/ is deliberately NOT ignored. Metrics tables and confusion-matrix
+# figures are what the Final rubric asks for. The next lines re-include them
+# in case a broad pattern above ever catches them.
+!results/
+!results/**/*.csv
+!results/**/*.json
+!results/**/*.png
+!results/**/*.pdf
+
+# --- Python ----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# --- Virtual environments --------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+.conda/
+conda-meta/
+
+# --- Jupyter ---------------------------------------------------------------
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+profile_default/
+ipython_config.py
+
+# --- Testing & type checking -----------------------------------------------
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+
+# --- Editors ---------------------------------------------------------------
+# Ignore personal VS Code state but share the settings that keep the team's
+# formatting and interpreter config identical.
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# --- OS --------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# --- Secrets & local config ------------------------------------------------
+.env
+.env.local
+secrets.yaml
+
+# --- Report working files --------------------------------------------------
+# Commit the final .docx/.pdf; ignore Word's lock and backup litter.
+~$*.docx
+~$*.pptx
+~$*.xlsx
+*.tmp
