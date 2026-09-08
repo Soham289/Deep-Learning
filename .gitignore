@@ -8,7 +8,9 @@
 
 # --- Dataset ---------------------------------------------------------------
 # ~270 MB extracted. Never commit it. Everyone downloads from UCI dataset 240.
-data/
+# NOTE: must be "data/*", not "data/" — a fully-ignored directory is never
+# descended into, so the negations below would otherwise never take effect.
+data/*
 !data/.gitkeep
 !data/README.md
 *.zip
