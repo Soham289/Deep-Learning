@@ -1,0 +1,71 @@
+{
+  "seed": 42,
+  "val_subjects": [
+    8,
+    16,
+    23,
+    29
+  ],
+  "configurations": [
+    {
+      "hidden_size": 128,
+      "n_params": 539142,
+      "training_time_sec": 41.65207559999999,
+      "best_epoch": 15,
+      "best_val_loss": 0.42308532897193063,
+      "best_val_acc": 0.8760088041085841,
+      "val_macro_f1": 0.8843090796048306,
+      "val_macro_precision": 0.8901179538665192,
+      "val_macro_recall": 0.8828007778747313,
+      "val_per_class_f1": {
+        "WALKING": 0.985981308411215,
+        "WALKING_UPSTAIRS": 0.9243697478991597,
+        "WALKING_DOWNSTAIRS": 0.9438775510204082,
+        "SITTING": 0.7073170731707317,
+        "STANDING": 0.8043087971274686,
+        "LAYING": 0.94
+      },
+      "device": "cuda"
+    },
+    {
+      "hidden_size": 96,
+      "n_params": 306054,
+      "training_time_sec": 13.141089000000648,
+      "best_epoch": 5,
+      "best_val_loss": 0.3734679134181336,
+      "best_val_acc": 0.8650036683785767,
+      "val_macro_f1": 0.8756242813093386,
+      "val_macro_precision": 0.8875555816068136,
+      "val_macro_recall": 0.8751447799021196,
+      "val_per_class_f1": {
+        "WALKING": 0.9807692307692307,
+        "WALKING_UPSTAIRS": 0.9362880886426593,
+        "WALKING_DOWNSTAIRS": 0.9714285714285714,
+        "SITTING": 0.6994727592267135,
+        "STANDING": 0.6695464362850972,
+        "LAYING": 0.9962406015037594
+      },
+      "device": "cuda"
+    },
+    {
+      "hidden_size": 64,
+      "n_params": 138502,
+      "training_time_sec": 9.873471400000199,
+      "best_epoch": 10,
+      "best_val_loss": 0.43670352114002703,
+      "best_val_acc": 0.8569332355099046,
+      "val_macro_f1": 0.8663677789325507,
+      "val_macro_precision": 0.8765780444832183,
+      "val_macro_recall": 0.8664571853988469,
+      "val_per_class_f1": {
+        "WALKING": 0.9665071770334929,
+        "WALKING_UPSTAIRS": 0.9095890410958904,
+        "WALKING_DOWNSTAIRS": 0.9533678756476683,
+        "SITTING": 0.7054673721340388,
+        "STANDING": 0.6766595289079229,
+        "LAYING": 0.9866156787762906
+      },
+      "device": "cuda"
+    }
+  ]
+}
