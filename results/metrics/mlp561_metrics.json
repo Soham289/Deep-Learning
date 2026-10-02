@@ -1,0 +1,78 @@
+{
+  "model": "MLP (561 features)",
+  "owner": "Soham",
+  "seed": 42,
+  "input_representation": "561 hand-crafted features",
+  "val_subjects": [
+    8,
+    16,
+    23,
+    29
+  ],
+  "n_params": 178310,
+  "training_time_sec": 5.84436840005219,
+  "best_epoch": 6,
+  "best_val_loss": 0.2527782791362486,
+  "test_accuracy": 0.9253478113335596,
+  "test_macro_precision": 0.9330195796987065,
+  "test_macro_recall": 0.9257843535638194,
+  "test_macro_f1": 0.9266088019641606,
+  "per_class_f1": {
+    "WALKING": 0.9749247743229689,
+    "WALKING_UPSTAIRS": 0.9347826086956522,
+    "WALKING_DOWNSTAIRS": 0.9591598599766628,
+    "SITTING": 0.8558758314855875,
+    "STANDING": 0.8666100254885302,
+    "LAYING": 0.968299711815562
+  },
+  "confusion_matrix": [
+    [
+      486,
+      7,
+      3,
+      0,
+      0,
+      0
+    ],
+    [
+      15,
+      430,
+      23,
+      3,
+      0,
+      0
+    ],
+    [
+      0,
+      9,
+      411,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      3,
+      0,
+      386,
+      102,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      22,
+      510,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      33,
+      504
+    ]
+  ]
+}
