@@ -1,0 +1,78 @@
+{
+  "model": "MLP (raw signals)",
+  "owner": "Soham",
+  "seed": 42,
+  "input_representation": "raw 128x9 window",
+  "val_subjects": [
+    8,
+    16,
+    23,
+    29
+  ],
+  "n_params": 329606,
+  "training_time_sec": 6.499923499999568,
+  "best_epoch": 6,
+  "best_val_loss": 0.44608444644593287,
+  "test_accuracy": 0.8995588734306074,
+  "test_macro_precision": 0.9006360122666539,
+  "test_macro_recall": 0.9014735412479995,
+  "test_macro_f1": 0.9000650204445627,
+  "per_class_f1": {
+    "WALKING": 0.9350104821802935,
+    "WALKING_UPSTAIRS": 0.9030883919062833,
+    "WALKING_DOWNSTAIRS": 0.9230769230769231,
+    "SITTING": 0.8129423660262892,
+    "STANDING": 0.8520599250936329,
+    "LAYING": 0.9742120343839542
+  },
+  "confusion_matrix": [
+    [
+      446,
+      6,
+      26,
+      18,
+      0,
+      0
+    ],
+    [
+      9,
+      424,
+      37,
+      1,
+      0,
+      0
+    ],
+    [
+      3,
+      3,
+      414,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      8,
+      0,
+      402,
+      81,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      77,
+      455,
+      0
+    ],
+    [
+      0,
+      27,
+      0,
+      0,
+      0,
+      510
+    ]
+  ]
+}
