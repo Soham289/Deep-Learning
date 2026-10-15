@@ -25,7 +25,7 @@ class BiLSTMClassifier(nn.Module):
     def __init__(
         self,
         input_size: int = 9,
-        hidden_size: int = 128,
+        hidden_size: int = 64,
         num_layers: int = 2,
         n_classes: int = 6,
         dropout: float = 0.3,
