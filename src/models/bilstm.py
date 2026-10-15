@@ -31,7 +31,7 @@ class BiLSTMClassifier(nn.Module):
         dropout: float = 0.3,
     ):
         super().__init__()
-        self.lstm = nn.LSTM(
+        self.lstm = nn.GRU(
             input_size=input_size,
             hidden_size=hidden_size,
             num_layers=num_layers,
