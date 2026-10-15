@@ -1,0 +1,30 @@
+{
+  "model": "BiLSTM",
+  "owner": "Avni",
+  "seed": 42,
+  "architecture": "BiGRU, hidden_size=64, 2 layers, bidirectional, mean pooling",
+  "val_subjects": [
+    8,
+    16,
+    23,
+    29
+  ],
+  "n_params": 104070,
+  "training_time_sec": null,
+  "best_epoch": null,
+  "best_val_loss": null,
+  "test_accuracy": null,
+  "test_macro_precision": null,
+  "test_macro_recall": null,
+  "test_macro_f1": null,
+  "per_class_f1": {
+    "WALKING": null,
+    "WALKING_UPSTAIRS": null,
+    "WALKING_DOWNSTAIRS": null,
+    "SITTING": null,
+    "STANDING": null,
+    "LAYING": null
+  },
+  "confusion_matrix": null,
+  "note": "Created after Commit 2 (GRU replacement). Actual metrics require dataset extraction and training."
+}
