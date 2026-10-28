@@ -25,13 +25,13 @@ class BiLSTMClassifier(nn.Module):
     def __init__(
         self,
         input_size: int = 9,
-        hidden_size: int = 128,
+        hidden_size: int = 64,
         num_layers: int = 2,
         n_classes: int = 6,
         dropout: float = 0.3,
     ):
         super().__init__()
-        self.lstm = nn.LSTM(
+        self.lstm = nn.GRU(
             input_size=input_size,
             hidden_size=hidden_size,
             num_layers=num_layers,
