@@ -1,0 +1,2592 @@
+{
+  "model": "MLP (raw signals)",
+  "summary": {
+    "model": "MLP (raw signals)",
+    "n_folds": 30,
+    "per_subject_accuracy": {
+      "1": 0.9884726224783862,
+      "2": 0.8874172185430463,
+      "3": 0.9853372434017595,
+      "4": 0.9337539432176656,
+      "5": 0.8509933774834437,
+      "6": 0.9507692307692308,
+      "7": 0.948051948051948,
+      "8": 0.8790035587188612,
+      "9": 0.8194444444444444,
+      "10": 0.6802721088435374,
+      "11": 1.0,
+      "12": 0.984375,
+      "13": 0.9602446483180428,
+      "14": 0.7368421052631579,
+      "15": 0.9878048780487805,
+      "16": 0.7377049180327869,
+      "17": 0.9347826086956522,
+      "18": 0.967032967032967,
+      "19": 0.9472222222222222,
+      "20": 0.9830508474576272,
+      "21": 0.9681372549019608,
+      "22": 0.9439252336448598,
+      "23": 0.9247311827956989,
+      "24": 1.0,
+      "25": 0.8679706601466992,
+      "26": 0.9923469387755102,
+      "27": 0.9973404255319149,
+      "28": 0.8979057591623036,
+      "29": 0.9098837209302325,
+      "30": 0.9268929503916449
+    },
+    "accuracy_mean_over_subjects": 0.9197236672434795,
+    "accuracy_std_over_subjects": 0.08315388318877906,
+    "accuracy_min": {
+      "subject": 10,
+      "value": 0.6802721088435374
+    },
+    "accuracy_max": {
+      "subject": 11,
+      "value": 1.0
+    },
+    "pooled_accuracy": 0.9223225555879212,
+    "pooled_macro_f1": 0.9239942964934226,
+    "pooled_per_class_f1": {
+      "WALKING": 0.9523527670908554,
+      "WALKING_UPSTAIRS": 0.9399612653324725,
+      "WALKING_DOWNSTAIRS": 0.9654450261780104,
+      "SITTING": 0.8404669260700389,
+      "STANDING": 0.8498402555910542,
+      "LAYING": 0.9958995386981035
+    },
+    "pooled_sitting_as_standing": 0.13787281935846932,
+    "pooled_standing_as_sitting": 0.161594963273872,
+    "pooled_confusion_matrix": [
+      [
+        1609,
+        70,
+        36,
+        1,
+        6,
+        0
+      ],
+      [
+        45,
+        1456,
+        40,
+        0,
+        3,
+        0
+      ],
+      [
+        3,
+        20,
+        1383,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        5,
+        0,
+        1512,
+        245,
+        15
+      ],
+      [
+        0,
+        2,
+        0,
+        308,
+        1596,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1943
+      ]
+    ],
+    "best_epoch_mean": 18.466666666666665,
+    "training_time_sec_mean": 26.025163150012183,
+    "group_accuracy": {
+      "official_val_subjects": {
+        "subjects": [
+          8,
+          16,
+          23,
+          29
+        ],
+        "mean_accuracy": 0.8628308451193949
+      },
+      "other_official_train_subjects": {
+        "subjects": [
+          1,
+          3,
+          5,
+          6,
+          7,
+          11,
+          14,
+          15,
+          17,
+          19,
+          21,
+          22,
+          25,
+          26,
+          27,
+          28,
+          30
+        ],
+        "mean_accuracy": 0.936752674057028
+      },
+      "official_test_subjects": {
+        "subjects": [
+          2,
+          4,
+          9,
+          10,
+          12,
+          13,
+          18,
+          20,
+          24
+        ],
+        "mean_accuracy": 0.9128434642063701
+      }
+    }
+  },
+  "folds": {
+    "1": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 8.087909700116143,
+      "best_epoch": 6,
+      "epochs_run": 21,
+      "best_val_loss": 0.14986548496021346,
+      "best_val_acc": 0.9429945054945055,
+      "test_accuracy": 0.9884726224783862,
+      "test_macro_precision": 0.9883040935672515,
+      "test_macro_recall": 0.9914035087719298,
+      "test_macro_f1": 0.9895820954644483,
+      "per_class_f1": {
+        "WALKING": 0.983957219251337,
+        "WALKING_UPSTAIRS": 0.9636363636363636,
+        "WALKING_DOWNSTAIRS": 1.0,
+        "SITTING": 1.0,
+        "STANDING": 1.0,
+        "LAYING": 0.98989898989899
+      },
+      "sitting_as_standing": 0.0,
+      "standing_as_sitting": 0.0,
+      "confusion_matrix": [
+        [
+          92,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          53,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          49,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          47,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          53,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          49
+        ]
+      ],
+      "subject": 1,
+      "val_subjects": [
+        2,
+        18,
+        24,
+        25
+      ],
+      "n_test_windows": 347
+    },
+    "2": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 10.239666600013152,
+      "best_epoch": 11,
+      "epochs_run": 26,
+      "best_val_loss": 0.1350800411553688,
+      "best_val_acc": 0.9473319473319474,
+      "test_accuracy": 0.8874172185430463,
+      "test_macro_precision": 0.9313178294573644,
+      "test_macro_recall": 0.8769657724329325,
+      "test_macro_f1": 0.8659913240658583,
+      "per_class_f1": {
+        "WALKING": 1.0,
+        "WALKING_UPSTAIRS": 0.9795918367346939,
+        "WALKING_DOWNSTAIRS": 0.9782608695652174,
+        "SITTING": 0.4666666666666667,
+        "STANDING": 0.7714285714285715,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.6956521739130435,
+      "standing_as_sitting": 0.0,
+      "confusion_matrix": [
+        [
+          59,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          48,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          45,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          14,
+          32,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          54,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          48
+        ]
+      ],
+      "subject": 2,
+      "val_subjects": [
+        12,
+        17,
+        23,
+        30
+      ],
+      "n_test_windows": 302
+    },
+    "3": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 15.851937100058421,
+      "best_epoch": 22,
+      "epochs_run": 37,
+      "best_val_loss": 0.14212974665127556,
+      "best_val_acc": 0.9352196574832464,
+      "test_accuracy": 0.9853372434017595,
+      "test_macro_precision": 0.9857520786092215,
+      "test_macro_recall": 0.9848215260568104,
+      "test_macro_f1": 0.9851666871549692,
+      "per_class_f1": {
+        "WALKING": 0.9824561403508771,
+        "WALKING_UPSTAIRS": 0.9747899159663865,
+        "WALKING_DOWNSTAIRS": 0.9795918367346939,
+        "SITTING": 0.9902912621359223,
+        "STANDING": 0.9838709677419355,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.0,
+      "standing_as_sitting": 0.0,
+      "confusion_matrix": [
+        [
+          56,
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          58,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          48,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          51,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          61,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          62
+        ]
+      ],
+      "subject": 3,
+      "val_subjects": [
+        7,
+        9,
+        18,
+        30
+      ],
+      "n_test_windows": 341
+    },
+    "4": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 16.50482409982942,
+      "best_epoch": 24,
+      "epochs_run": 39,
+      "best_val_loss": 0.11963587990306146,
+      "best_val_acc": 0.9372294372294372,
+      "test_accuracy": 0.9337539432176656,
+      "test_macro_precision": 0.949236298292902,
+      "test_macro_recall": 0.9376984126984128,
+      "test_macro_f1": 0.93300247635286,
+      "per_class_f1": {
+        "WALKING": 0.9915966386554622,
+        "WALKING_UPSTAIRS": 0.9904761904761905,
+        "WALKING_DOWNSTAIRS": 1.0,
+        "SITTING": 0.8333333333333334,
+        "STANDING": 0.782608695652174,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.0,
+      "standing_as_sitting": 0.35714285714285715,
+      "confusion_matrix": [
+        [
+          59,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          52,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          45,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          50,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          20,
+          36,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          54
+        ]
+      ],
+      "subject": 4,
+      "val_subjects": [
+        1,
+        5,
+        20,
+        30
+      ],
+      "n_test_windows": 317
+    },
+    "5": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 8.646308199968189,
+      "best_epoch": 6,
+      "epochs_run": 21,
+      "best_val_loss": 0.19958374086040834,
+      "best_val_acc": 0.939288206559665,
+      "test_accuracy": 0.8509933774834437,
+      "test_macro_precision": 0.8805501407840589,
+      "test_macro_recall": 0.8628246753246754,
+      "test_macro_f1": 0.84,
+      "per_class_f1": {
+        "WALKING": 1.0,
+        "WALKING_UPSTAIRS": 1.0,
+        "WALKING_DOWNSTAIRS": 1.0,
+        "SITTING": 0.64,
+        "STANDING": 0.4,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.09090909090909091,
+      "standing_as_sitting": 0.7321428571428571,
+      "confusion_matrix": [
+        [
+          56,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          47,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          47,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          40,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          41,
+          15,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          52
+        ]
+      ],
+      "subject": 5,
+      "val_subjects": [
+        3,
+        13,
+        28,
+        30
+      ],
+      "n_test_windows": 302
+    },
+    "6": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 13.936428199987859,
+      "best_epoch": 21,
+      "epochs_run": 36,
+      "best_val_loss": 0.07361094274262829,
+      "best_val_acc": 0.9900914634146342,
+      "test_accuracy": 0.9507692307692308,
+      "test_macro_precision": 0.960529661485396,
+      "test_macro_recall": 0.9517278043593832,
+      "test_macro_f1": 0.9511527512658219,
+      "per_class_f1": {
+        "WALKING": 0.9821428571428571,
+        "WALKING_UPSTAIRS": 0.9902912621359223,
+        "WALKING_DOWNSTAIRS": 0.9896907216494846,
+        "SITTING": 0.8541666666666666,
+        "STANDING": 0.890625,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.2545454545454545,
+      "standing_as_sitting": 0.0,
+      "confusion_matrix": [
+        [
+          55,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          51,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          48,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          41,
+          14,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          57,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          57
+        ]
+      ],
+      "subject": 6,
+      "val_subjects": [
+        7,
+        11,
+        15,
+        19
+      ],
+      "n_test_windows": 325
+    },
+    "7": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 6.912853799993172,
+      "best_epoch": 3,
+      "epochs_run": 18,
+      "best_val_loss": 0.2560477779869944,
+      "best_val_acc": 0.9151343705799151,
+      "test_accuracy": 0.948051948051948,
+      "test_macro_precision": 0.9493697803897309,
+      "test_macro_recall": 0.9472268467135282,
+      "test_macro_f1": 0.9478463035358051,
+      "per_class_f1": {
+        "WALKING": 0.9661016949152542,
+        "WALKING_UPSTAIRS": 0.9591836734693877,
+        "WALKING_DOWNSTAIRS": 1.0,
+        "SITTING": 0.875,
+        "STANDING": 0.8867924528301887,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.125,
+      "standing_as_sitting": 0.11320754716981132,
+      "confusion_matrix": [
+        [
+          57,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          47,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          47,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          42,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          6,
+          47,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          52
+        ]
+      ],
+      "subject": 7,
+      "val_subjects": [
+        2,
+        22,
+        25,
+        28
+      ],
+      "n_test_windows": 308
+    },
+    "8": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 9.131094500189647,
+      "best_epoch": 8,
+      "epochs_run": 23,
+      "best_val_loss": 0.16430463903614514,
+      "best_val_acc": 0.9276752767527675,
+      "test_accuracy": 0.8790035587188612,
+      "test_macro_precision": 0.9269783862912254,
+      "test_macro_recall": 0.8940831074977417,
+      "test_macro_f1": 0.8788908404395231,
+      "per_class_f1": {
+        "WALKING": 0.9896907216494846,
+        "WALKING_UPSTAIRS": 0.9876543209876543,
+        "WALKING_DOWNSTAIRS": 1.0,
+        "SITTING": 0.736,
+        "STANDING": 0.56,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.0,
+      "standing_as_sitting": 0.6111111111111112,
+      "confusion_matrix": [
+        [
+          48,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          40,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          38,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          46,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          33,
+          21,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          54
+        ]
+      ],
+      "subject": 8,
+      "val_subjects": [
+        5,
+        11,
+        15,
+        25
+      ],
+      "n_test_windows": 281
+    },
+    "9": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 23.1310612000525,
+      "best_epoch": 44,
+      "epochs_run": 59,
+      "best_val_loss": 0.072945738034641,
+      "best_val_acc": 0.9737237237237237,
+      "test_accuracy": 0.8194444444444444,
+      "test_macro_precision": 0.842877223178428,
+      "test_macro_recall": 0.8125309611023898,
+      "test_macro_f1": 0.7834065136746368,
+      "per_class_f1": {
+        "WALKING": 0.96,
+        "WALKING_UPSTAIRS": 0.9292929292929293,
+        "WALKING_DOWNSTAIRS": 0.9230769230769231,
+        "SITTING": 0.6616541353383458,
+        "STANDING": 0.22641509433962265,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.04,
+      "standing_as_sitting": 0.8666666666666667,
+      "confusion_matrix": [
+        [
+          48,
+          0,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          46,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          42,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          4,
+          0,
+          44,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          39,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          50
+        ]
+      ],
+      "subject": 9,
+      "val_subjects": [
+        2,
+        11,
+        19,
+        20
+      ],
+      "n_test_windows": 288
+    },
+    "10": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 35.06479040021077,
+      "best_epoch": 73,
+      "epochs_run": 88,
+      "best_val_loss": 0.08460378184300327,
+      "best_val_acc": 0.9538024164889837,
+      "test_accuracy": 0.6802721088435374,
+      "test_macro_precision": 0.7436672011366282,
+      "test_macro_recall": 0.6848978995539948,
+      "test_macro_f1": 0.6748046419474484,
+      "per_class_f1": {
+        "WALKING": 0.675,
+        "WALKING_UPSTAIRS": 0.7466666666666667,
+        "WALKING_DOWNSTAIRS": 0.628099173553719,
+        "SITTING": 0.5148514851485149,
+        "STANDING": 0.4842105263157895,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.5185185185185185,
+      "standing_as_sitting": 0.4772727272727273,
+      "confusion_matrix": [
+        [
+          27,
+          0,
+          26,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          28,
+          19,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          38,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          26,
+          28,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          21,
+          23,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          58
+        ]
+      ],
+      "subject": 10,
+      "val_subjects": [
+        3,
+        17,
+        20,
+        29
+      ],
+      "n_test_windows": 294
+    },
+    "11": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 7.51411799993366,
+      "best_epoch": 5,
+      "epochs_run": 20,
+      "best_val_loss": 0.18635021242699776,
+      "best_val_acc": 0.945906432748538,
+      "test_accuracy": 1.0,
+      "test_macro_precision": 1.0,
+      "test_macro_recall": 1.0,
+      "test_macro_f1": 1.0,
+      "per_class_f1": {
+        "WALKING": 1.0,
+        "WALKING_UPSTAIRS": 1.0,
+        "WALKING_DOWNSTAIRS": 1.0,
+        "SITTING": 1.0,
+        "STANDING": 1.0,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.0,
+      "standing_as_sitting": 0.0,
+      "confusion_matrix": [
+        [
+          59,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          54,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          46,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          53,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          47,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          57
+        ]
+      ],
+      "subject": 11,
+      "val_subjects": [
+        3,
+        8,
+        18,
+        28
+      ],
+      "n_test_windows": 316
+    },
+    "12": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 31.182060099905357,
+      "best_epoch": 28,
+      "epochs_run": 43,
+      "best_val_loss": 0.15699079823299408,
+      "best_val_acc": 0.945480631276901,
+      "test_accuracy": 0.984375,
+      "test_macro_precision": 0.9836261309946576,
+      "test_macro_recall": 0.9852648171500631,
+      "test_macro_f1": 0.9842928435598063,
+      "per_class_f1": {
+        "WALKING": 0.98,
+        "WALKING_UPSTAIRS": 0.9714285714285714,
+        "WALKING_DOWNSTAIRS": 0.989247311827957,
+        "SITTING": 0.9902912621359223,
+        "STANDING": 0.9747899159663865,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.0,
+      "standing_as_sitting": 0.01639344262295082,
+      "confusion_matrix": [
+        [
+          49,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          51,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          46,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          51,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          1,
+          58,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          60
+        ]
+      ],
+      "subject": 12,
+      "val_subjects": [
+        4,
+        9,
+        21,
+        24
+      ],
+      "n_test_windows": 320
+    },
+    "13": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 25.7079183999449,
+      "best_epoch": 8,
+      "epochs_run": 23,
+      "best_val_loss": 0.129275842294075,
+      "best_val_acc": 0.9639175257731959,
+      "test_accuracy": 0.9602446483180428,
+      "test_macro_precision": 0.9640636569126272,
+      "test_macro_recall": 0.9569249872401367,
+      "test_macro_f1": 0.9585290576059028,
+      "per_class_f1": {
+        "WALKING": 0.9557522123893806,
+        "WALKING_UPSTAIRS": 0.9821428571428571,
+        "WALKING_DOWNSTAIRS": 0.967741935483871,
+        "SITTING": 0.9111111111111111,
+        "STANDING": 0.9344262295081968,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.16326530612244897,
+      "standing_as_sitting": 0.0,
+      "confusion_matrix": [
+        [
+          54,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          55,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          45,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          41,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          57,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          62
+        ]
+      ],
+      "subject": 13,
+      "val_subjects": [
+        3,
+        4,
+        15,
+        23
+      ],
+      "n_test_windows": 327
+    },
+    "14": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 66.83437050017528,
+      "best_epoch": 49,
+      "epochs_run": 64,
+      "best_val_loss": 0.08663994348106502,
+      "best_val_acc": 0.9586656997824511,
+      "test_accuracy": 0.7368421052631579,
+      "test_macro_precision": 0.8655409631019387,
+      "test_macro_recall": 0.7497384390039757,
+      "test_macro_f1": 0.6992242033894714,
+      "per_class_f1": {
+        "WALKING": 0.03333333333333333,
+        "WALKING_UPSTAIRS": 0.631578947368421,
+        "WALKING_DOWNSTAIRS": 0.9411764705882353,
+        "SITTING": 0.7441860465116279,
+        "STANDING": 0.8450704225352113,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.4074074074074074,
+      "standing_as_sitting": 0.0,
+      "confusion_matrix": [
+        [
+          1,
+          58,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          54,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          5,
+          40,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          32,
+          22,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          60,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          51
+        ]
+      ],
+      "subject": 14,
+      "val_subjects": [
+        12,
+        13,
+        17,
+        18
+      ],
+      "n_test_windows": 323
+    },
+    "15": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 16.80887180007994,
+      "best_epoch": 10,
+      "epochs_run": 25,
+      "best_val_loss": 0.5820564975268331,
+      "best_val_acc": 0.8086510263929618,
+      "test_accuracy": 0.9878048780487805,
+      "test_macro_precision": 0.9855072463768115,
+      "test_macro_recall": 0.986111111111111,
+      "test_macro_f1": 0.9851778656126483,
+      "per_class_f1": {
+        "WALKING": 1.0,
+        "WALKING_UPSTAIRS": 0.9565217391304348,
+        "WALKING_DOWNSTAIRS": 0.9545454545454546,
+        "SITTING": 1.0,
+        "STANDING": 1.0,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.0,
+      "standing_as_sitting": 0.0,
+      "confusion_matrix": [
+        [
+          54,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          44,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          42,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          59,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          53,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          72
+        ]
+      ],
+      "subject": 15,
+      "val_subjects": [
+        10,
+        16,
+        19,
+        29
+      ],
+      "n_test_windows": 328
+    },
+    "16": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 24.949629899812862,
+      "best_epoch": 7,
+      "epochs_run": 22,
+      "best_val_loss": 0.08227735032520969,
+      "best_val_acc": 0.9784327821711,
+      "test_accuracy": 0.7377049180327869,
+      "test_macro_precision": 0.7731835158305747,
+      "test_macro_recall": 0.7687389337005706,
+      "test_macro_f1": 0.766571500588659,
+      "per_class_f1": {
+        "WALKING": 0.918918918918919,
+        "WALKING_UPSTAIRS": 0.8539325842696629,
+        "WALKING_DOWNSTAIRS": 0.9591836734693877,
+        "SITTING": 0.4028776978417266,
+        "STANDING": 0.4645161290322581,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.5942028985507246,
+      "standing_as_sitting": 0.5384615384615384,
+      "confusion_matrix": [
+        [
+          51,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          9,
+          38,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          47,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          28,
+          41,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          42,
+          36,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          70
+        ]
+      ],
+      "subject": 16,
+      "val_subjects": [
+        7,
+        13,
+        18,
+        26
+      ],
+      "n_test_windows": 366
+    },
+    "17": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 20.571736299898475,
+      "best_epoch": 5,
+      "epochs_run": 20,
+      "best_val_loss": 0.12132486192112615,
+      "best_val_acc": 0.9612558450233801,
+      "test_accuracy": 0.9347826086956522,
+      "test_macro_precision": 0.9468006757104744,
+      "test_macro_recall": 0.930299408014572,
+      "test_macro_f1": 0.9342673216947598,
+      "per_class_f1": {
+        "WALKING": 0.921875,
+        "WALKING_UPSTAIRS": 0.8888888888888888,
+        "WALKING_DOWNSTAIRS": 1.0,
+        "SITTING": 0.8771929824561403,
+        "STANDING": 0.9176470588235294,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.21875,
+      "standing_as_sitting": 0.0,
+      "confusion_matrix": [
+        [
+          59,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          40,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          46,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          50,
+          14,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          78,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          71
+        ]
+      ],
+      "subject": 17,
+      "val_subjects": [
+        12,
+        25,
+        26,
+        27
+      ],
+      "n_test_windows": 368
+    },
+    "18": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 18.547938799951226,
+      "best_epoch": 3,
+      "epochs_run": 18,
+      "best_val_loss": 0.45660987045239965,
+      "best_val_acc": 0.8270995059985886,
+      "test_accuracy": 0.967032967032967,
+      "test_macro_precision": 0.9764705882352941,
+      "test_macro_recall": 0.9649122807017544,
+      "test_macro_f1": 0.9677339290146438,
+      "per_class_f1": {
+        "WALKING": 1.0,
+        "WALKING_UPSTAIRS": 1.0,
+        "WALKING_DOWNSTAIRS": 1.0,
+        "SITTING": 0.8823529411764706,
+        "STANDING": 0.9240506329113924,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.21052631578947367,
+      "standing_as_sitting": 0.0,
+      "confusion_matrix": [
+        [
+          56,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          58,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          55,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          45,
+          12,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          73,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          65
+        ]
+      ],
+      "subject": 18,
+      "val_subjects": [
+        4,
+        14,
+        17,
+        25
+      ],
+      "n_test_windows": 364
+    },
+    "19": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 32.46098700002767,
+      "best_epoch": 16,
+      "epochs_run": 31,
+      "best_val_loss": 0.12522437594234476,
+      "best_val_acc": 0.9474097331240189,
+      "test_accuracy": 0.9472222222222222,
+      "test_macro_precision": 0.9593799058084772,
+      "test_macro_recall": 0.9498346212387307,
+      "test_macro_f1": 0.9513827014199966,
+      "per_class_f1": {
+        "WALKING": 0.9807692307692307,
+        "WALKING_UPSTAIRS": 0.9512195121951219,
+        "WALKING_DOWNSTAIRS": 0.9736842105263158,
+        "SITTING": 0.8854961832061069,
+        "STANDING": 1.0,
+        "LAYING": 0.9171270718232044
+      },
+      "sitting_as_standing": 0.0,
+      "standing_as_sitting": 0.0,
+      "confusion_matrix": [
+        [
+          51,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          39,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          37,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          58,
+          0,
+          15
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          73,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          83
+        ]
+      ],
+      "subject": 19,
+      "val_subjects": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "n_test_windows": 360
+    },
+    "20": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 46.33209419995546,
+      "best_epoch": 30,
+      "epochs_run": 45,
+      "best_val_loss": 0.3270325856536567,
+      "best_val_acc": 0.8658448150833937,
+      "test_accuracy": 0.9830508474576272,
+      "test_macro_precision": 0.9873417721518987,
+      "test_macro_recall": 0.9848484848484849,
+      "test_macro_f1": 0.985484544695071,
+      "per_class_f1": {
+        "WALKING": 1.0,
+        "WALKING_UPSTAIRS": 1.0,
+        "WALKING_DOWNSTAIRS": 1.0,
+        "SITTING": 0.9523809523809523,
+        "STANDING": 0.9605263157894737,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.09090909090909091,
+      "standing_as_sitting": 0.0,
+      "confusion_matrix": [
+        [
+          51,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          51,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          45,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          60,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          73,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          68
+        ]
+      ],
+      "subject": 20,
+      "val_subjects": [
+        9,
+        16,
+        24,
+        29
+      ],
+      "n_test_windows": 354
+    },
+    "21": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 30.120440399972722,
+      "best_epoch": 14,
+      "epochs_run": 29,
+      "best_val_loss": 0.3243749521079934,
+      "best_val_acc": 0.891575663026521,
+      "test_accuracy": 0.9681372549019608,
+      "test_macro_precision": 0.9787581699346406,
+      "test_macro_recall": 0.9745098039215687,
+      "test_macro_f1": 0.9748557708340281,
+      "per_class_f1": {
+        "WALKING": 1.0,
+        "WALKING_UPSTAIRS": 1.0,
+        "WALKING_DOWNSTAIRS": 1.0,
+        "SITTING": 0.9171974522292994,
+        "STANDING": 0.9319371727748691,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.15294117647058825,
+      "standing_as_sitting": 0.0,
+      "confusion_matrix": [
+        [
+          52,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          47,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          45,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          72,
+          13,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          89,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          90
+        ]
+      ],
+      "subject": 21,
+      "val_subjects": [
+        3,
+        5,
+        11,
+        14
+      ],
+      "n_test_windows": 408
+    },
+    "22": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 21.824539700057358,
+      "best_epoch": 6,
+      "epochs_run": 21,
+      "best_val_loss": 0.13830212128791453,
+      "best_val_acc": 0.9719495091164095,
+      "test_accuracy": 0.9439252336448598,
+      "test_macro_precision": 0.9455128205128206,
+      "test_macro_recall": 0.9289164941338854,
+      "test_macro_f1": 0.9258875434150005,
+      "per_class_f1": {
+        "WALKING": 0.8490566037735849,
+        "WALKING_UPSTAIRS": 0.746268656716418,
+        "WALKING_DOWNSTAIRS": 0.96,
+        "SITTING": 1.0,
+        "STANDING": 1.0,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.0,
+      "standing_as_sitting": 0.0,
+      "confusion_matrix": [
+        [
+          45,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          15,
+          25,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          36,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          62,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          63,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          72
+        ]
+      ],
+      "subject": 22,
+      "val_subjects": [
+        1,
+        11,
+        24,
+        28
+      ],
+      "n_test_windows": 321
+    },
+    "23": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 19.65157449990511,
+      "best_epoch": 4,
+      "epochs_run": 19,
+      "best_val_loss": 0.4177676471216338,
+      "best_val_acc": 0.8921130952380952,
+      "test_accuracy": 0.9247311827956989,
+      "test_macro_precision": 0.9358450723792059,
+      "test_macro_recall": 0.9247350540969683,
+      "test_macro_f1": 0.9241190635099817,
+      "per_class_f1": {
+        "WALKING": 0.9586776859504132,
+        "WALKING_UPSTAIRS": 0.9142857142857143,
+        "WALKING_DOWNSTAIRS": 0.9411764705882353,
+        "SITTING": 0.8831168831168831,
+        "STANDING": 0.847457627118644,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.0,
+      "standing_as_sitting": 0.2647058823529412,
+      "confusion_matrix": [
+        [
+          58,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          48,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          5,
+          48,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          68,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          18,
+          50,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          72
+        ]
+      ],
+      "subject": 23,
+      "val_subjects": [
+        7,
+        10,
+        19,
+        28
+      ],
+      "n_test_windows": 372
+    },
+    "24": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 48.63829340017401,
+      "best_epoch": 32,
+      "epochs_run": 47,
+      "best_val_loss": 0.1377176726085211,
+      "best_val_acc": 0.9425911559348332,
+      "test_accuracy": 1.0,
+      "test_macro_precision": 1.0,
+      "test_macro_recall": 1.0,
+      "test_macro_f1": 1.0,
+      "per_class_f1": {
+        "WALKING": 1.0,
+        "WALKING_UPSTAIRS": 1.0,
+        "WALKING_DOWNSTAIRS": 1.0,
+        "SITTING": 1.0,
+        "STANDING": 1.0,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.0,
+      "standing_as_sitting": 0.0,
+      "confusion_matrix": [
+        [
+          58,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          59,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          55,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          68,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          69,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          72
+        ]
+      ],
+      "subject": 24,
+      "val_subjects": [
+        8,
+        9,
+        15,
+        26
+      ],
+      "n_test_windows": 381
+    },
+    "25": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 38.829573000082746,
+      "best_epoch": 22,
+      "epochs_run": 37,
+      "best_val_loss": 0.0772432518893339,
+      "best_val_acc": 0.9662068965517241,
+      "test_accuracy": 0.8679706601466992,
+      "test_macro_precision": 0.8878279393130472,
+      "test_macro_recall": 0.8746409539512987,
+      "test_macro_f1": 0.8660429085378033,
+      "per_class_f1": {
+        "WALKING": 0.950354609929078,
+        "WALKING_UPSTAIRS": 0.9193548387096774,
+        "WALKING_DOWNSTAIRS": 0.9256198347107438,
+        "SITTING": 0.7738095238095238,
+        "STANDING": 0.6271186440677966,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.0,
+      "standing_as_sitting": 0.5,
+      "confusion_matrix": [
+        [
+          67,
+          0,
+          2,
+          1,
+          4,
+          0
+        ],
+        [
+          0,
+          57,
+          5,
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          2,
+          56,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          65,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          37,
+          37,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          73
+        ]
+      ],
+      "subject": 25,
+      "val_subjects": [
+        18,
+        19,
+        20,
+        23
+      ],
+      "n_test_windows": 409
+    },
+    "26": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 26.984327499987558,
+      "best_epoch": 11,
+      "epochs_run": 26,
+      "best_val_loss": 0.13638169946573425,
+      "best_val_acc": 0.9150943396226415,
+      "test_accuracy": 0.9923469387755102,
+      "test_macro_precision": 0.9919354838709676,
+      "test_macro_recall": 0.9909090909090909,
+      "test_macro_f1": 0.9911948713987796,
+      "per_class_f1": {
+        "WALKING": 0.9752066115702479,
+        "WALKING_UPSTAIRS": 0.9719626168224299,
+        "WALKING_DOWNSTAIRS": 1.0,
+        "SITTING": 1.0,
+        "STANDING": 1.0,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.0,
+      "standing_as_sitting": 0.0,
+      "confusion_matrix": [
+        [
+          59,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          52,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          50,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          78,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          74,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          76
+        ]
+      ],
+      "subject": 26,
+      "val_subjects": [
+        5,
+        17,
+        18,
+        29
+      ],
+      "n_test_windows": 392
+    },
+    "27": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 24.535646399948746,
+      "best_epoch": 8,
+      "epochs_run": 23,
+      "best_val_loss": 0.14157673903873988,
+      "best_val_acc": 0.9307142857142857,
+      "test_accuracy": 0.9973404255319149,
+      "test_macro_precision": 0.9962962962962963,
+      "test_macro_recall": 0.9967320261437909,
+      "test_macro_f1": 0.9964771758074683,
+      "per_class_f1": {
+        "WALKING": 1.0,
+        "WALKING_UPSTAIRS": 0.9900990099009901,
+        "WALKING_DOWNSTAIRS": 0.9887640449438202,
+        "SITTING": 1.0,
+        "STANDING": 1.0,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.0,
+      "standing_as_sitting": 0.0,
+      "confusion_matrix": [
+        [
+          57,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          50,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          44,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          70,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          80,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          74
+        ]
+      ],
+      "subject": 27,
+      "val_subjects": [
+        1,
+        2,
+        17,
+        30
+      ],
+      "n_test_windows": 376
+    },
+    "28": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 64.20822490006685,
+      "best_epoch": 45,
+      "epochs_run": 60,
+      "best_val_loss": 0.17315246869938383,
+      "best_val_acc": 0.9089655172413793,
+      "test_accuracy": 0.8979057591623036,
+      "test_macro_precision": 0.9426638176638177,
+      "test_macro_recall": 0.9089506172839507,
+      "test_macro_f1": 0.9047628917808758,
+      "per_class_f1": {
+        "WALKING": 0.9906542056074766,
+        "WALKING_UPSTAIRS": 0.9902912621359223,
+        "WALKING_DOWNSTAIRS": 1.0,
+        "SITTING": 0.6415094339622641,
+        "STANDING": 0.8061224489795918,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.5277777777777778,
+      "standing_as_sitting": 0.0,
+      "confusion_matrix": [
+        [
+          53,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          51,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          46,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          34,
+          38,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          79,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          80
+        ]
+      ],
+      "subject": 28,
+      "val_subjects": [
+        12,
+        16,
+        23,
+        26
+      ],
+      "n_test_windows": 382
+    },
+    "29": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 42.634189599892125,
+      "best_epoch": 25,
+      "epochs_run": 40,
+      "best_val_loss": 0.11549463832300577,
+      "best_val_acc": 0.957796852646638,
+      "test_accuracy": 0.9098837209302325,
+      "test_macro_precision": 0.9432234432234431,
+      "test_macro_recall": 0.9205128205128205,
+      "test_macro_f1": 0.9135951122706091,
+      "per_class_f1": {
+        "WALKING": 1.0,
+        "WALKING_UPSTAIRS": 1.0,
+        "WALKING_DOWNSTAIRS": 1.0,
+        "SITTING": 0.7947019867549668,
+        "STANDING": 0.6868686868686869,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.0,
+      "standing_as_sitting": 0.47692307692307695,
+      "confusion_matrix": [
+        [
+          53,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          49,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          48,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          60,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          31,
+          34,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          69
+        ]
+      ],
+      "subject": 29,
+      "val_subjects": [
+        4,
+        15,
+        23,
+        24
+      ],
+      "n_test_windows": 344
+    },
+    "30": {
+      "seed": 42,
+      "n_params": 329606,
+      "training_time_sec": 24.911486300174147,
+      "best_epoch": 8,
+      "epochs_run": 23,
+      "best_val_loss": 0.2955078981019462,
+      "best_val_acc": 0.9079048349961627,
+      "test_accuracy": 0.9268929503916449,
+      "test_macro_precision": 0.9295743504698729,
+      "test_macro_recall": 0.9222582047076306,
+      "test_macro_f1": 0.9220379683672628,
+      "per_class_f1": {
+        "WALKING": 1.0,
+        "WALKING_UPSTAIRS": 0.9696969696969697,
+        "WALKING_DOWNSTAIRS": 0.9672131147540983,
+        "SITTING": 0.8260869565217391,
+        "STANDING": 0.7692307692307693,
+        "LAYING": 1.0
+      },
+      "sitting_as_standing": 0.08064516129032258,
+      "standing_as_sitting": 0.3220338983050847,
+      "confusion_matrix": [
+        [
+          65,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          64,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          59,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          57,
+          5,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          19,
+          40,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          70
+        ]
+      ],
+      "subject": 30,
+      "val_subjects": [
+        1,
+        7,
+        10,
+        20
+      ],
+      "n_test_windows": 383
+    }
+  }
+}

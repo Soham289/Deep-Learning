@@ -335,27 +335,47 @@ def load_all(root: str | Path) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
 # ---------------------------------------------------------------------------
 
 def make_loaders(bundle: dict, batch_size: int = 128, channels_first: bool = False,
-                 num_workers: int = 0):
+                 num_workers: int = 0, features: bool = False):
     """Build train/val/test DataLoaders from a bundle.
 
     channels_first=True gives (N, 9, 128) for nn.Conv1d.
     Leave it False for nn.LSTM, which wants (N, 128, 9) with batch_first=True.
     The MLP flattens either way.
+
+    features=True draws on the 561 hand-crafted feature vectors (F_*) rather than
+    the raw windows, so the same architecture can be trained on either
+    representation through one code path. `load_bundle` must have been called
+    with with_features561=True.
+
+    The training loader drops a trailing batch of exactly one sample.
+    BatchNorm1d cannot compute a batch statistic from a single row and raises
+    at that point; the fixed 21/9 subject split never produces such a batch, but
+    LOSO fold sizes can, which previously blocked LOSO for the MLP.
     """
     import torch
     from torch.utils.data import DataLoader, TensorDataset
 
+    key = "F" if features else "X"
+    if features and f"{key}_train" not in bundle:
+        raise KeyError(
+            "features=True needs the 561-feature arrays; call "
+            "load_bundle(..., with_features561=True)."
+        )
+
     def _ds(X, y):
         t = torch.from_numpy(np.ascontiguousarray(X))
-        if channels_first:
+        if channels_first and t.ndim == 3:
             t = t.permute(0, 2, 1).contiguous()
         return TensorDataset(t, torch.from_numpy(y))
 
+    drop_last = len(bundle[f"{key}_train"]) % batch_size == 1
+
     common = dict(batch_size=batch_size, num_workers=num_workers, pin_memory=True)
     return (
-        DataLoader(_ds(bundle["X_train"], bundle["y_train"]), shuffle=True, **common),
-        DataLoader(_ds(bundle["X_val"], bundle["y_val"]), shuffle=False, **common),
-        DataLoader(_ds(bundle["X_test"], bundle["y_test"]), shuffle=False, **common),
+        DataLoader(_ds(bundle[f"{key}_train"], bundle["y_train"]), shuffle=True,
+                   drop_last=drop_last, **common),
+        DataLoader(_ds(bundle[f"{key}_val"], bundle["y_val"]), shuffle=False, **common),
+        DataLoader(_ds(bundle[f"{key}_test"], bundle["y_test"]), shuffle=False, **common),
     )
 
 

@@ -25,7 +25,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
 warnings.filterwarnings("ignore", message=".*pin_memory.*")
 
-from experiments import SPECS, aggregate, run_once  # noqa: E402
+from experiments import SPECS, aggregate, bundle_kwargs, run_once  # noqa: E402
 from har_data import load_bundle  # noqa: E402
 
 DATA_ROOT = PROJECT_ROOT / "data" / "UCI HAR Dataset"
@@ -34,7 +34,7 @@ FIGURES_DIR = PROJECT_ROOT / "results" / "figures"
 
 
 def run_model(name: str, seeds: list[int], max_epochs: int | None = None) -> dict:
-    bundle = load_bundle(DATA_ROOT, verbose=False)
+    bundle = load_bundle(DATA_ROOT, verbose=False, **bundle_kwargs(name))
     train_kwargs = {"max_epochs": max_epochs} if max_epochs else None
     records = []
     for seed in seeds:

@@ -1,14 +1,21 @@
 """Shared helpers for multi-run experiments (seeds, LOSO, ablations).
 
-Holds each raw-signal model's construction and the training configuration its
-owner settled on, so every experiment runner trains the three architectures
-exactly as their notebooks/drivers do. Nothing here changes the shared protocol:
-data comes from `har_data.load_bundle`, training from `train.train_model`,
-scoring from `evaluate.evaluate_model`.
+Holds each model's construction and the training configuration its owner
+settled on, so every experiment runner trains the architectures exactly as
+their notebooks/drivers do. Nothing here changes the shared protocol: data
+comes from `har_data.load_bundle`, training from `train.train_model`, scoring
+from `evaluate.evaluate_model`.
 
-Only the raw (N, 128, 9) models are registered. The 561-feature MLP uses its own
-loaders (see notebooks/member_a_mlp_driver.py) and is a separate representation
-study, not a raw-input architecture result.
+Two input representations are registered:
+
+  * the raw (N, 128, 9) inertial windows, used by `cnn1d`, `mlp` and `bilstm`.
+    These three are the architecture comparison, and only these are
+    LOSO-eligible (`run_loso.py` rebuilds folds from the raw signals).
+  * the 561 hand-crafted feature vectors, used by `mlp561`. Same architecture
+    as `mlp`, different representation, so the pair isolates what the
+    engineered features contribute. It is a representation study, not a
+    raw-input architecture result, and must not be put in the same column of
+    the comparison table as the three above.
 """
 
 from __future__ import annotations
@@ -23,6 +30,8 @@ from models.mlp import HARMlp
 from train import train_model
 
 SITTING, STANDING = 3, 4  # indices in har_data.ACTIVITY_NAMES
+
+N_FEATURES_561 = 561
 
 SPECS = {
     "cnn1d": {
@@ -48,7 +57,35 @@ SPECS = {
                "num_layers": 2, "n_classes": b["n_classes"], "dropout": 0.3, **kw}),
         "train": dict(lr=1e-3, weight_decay=0.0, max_epochs=100, patience=10),
     },
+    "mlp561": {
+        "label": "MLP (561 features)",
+        "channels_first": False,
+        "features": True,   # draw on bundle["F_*"], not bundle["X_*"]
+        "build": lambda b, **kw: HARMlp(
+            input_dim=N_FEATURES_561, n_classes=b["n_classes"], **kw),
+        # Same optimiser settings as the raw MLP: only the representation differs,
+        # so a difference in result cannot be attributed to a different recipe.
+        "train": dict(lr=1e-3, weight_decay=1e-4, max_epochs=100, patience=15),
+    },
 }
+
+#: Models trained on the raw (N, 128, 9) windows. These are the three that make
+#: up the architecture comparison and the only ones `run_loso.py` can fold.
+RAW_MODELS = tuple(k for k, v in SPECS.items() if not v.get("features"))
+
+
+def uses_features(name: str) -> bool:
+    """True if this model is trained on the 561 hand-crafted feature vectors."""
+    return bool(SPECS[name].get("features"))
+
+
+def bundle_kwargs(name: str) -> dict:
+    """Extra `load_bundle` kwargs this model needs.
+
+    Runners splat this into their `load_bundle` call so the feature arrays are
+    loaded only for the model that actually wants them.
+    """
+    return {"with_features561": True} if uses_features(name) else {}
 
 
 def run_once(name: str, bundle: dict, seed: int, model_kwargs: dict | None = None,
@@ -58,7 +95,8 @@ def run_once(name: str, bundle: dict, seed: int, model_kwargs: dict | None = Non
     spec = SPECS[name]
     set_seed(seed)
     train_loader, val_loader, test_loader = make_loaders(
-        bundle, batch_size=batch_size, channels_first=spec["channels_first"])
+        bundle, batch_size=batch_size, channels_first=spec["channels_first"],
+        features=uses_features(name))
     model = spec["build"](bundle, **(model_kwargs or {}))
     cfg = {**spec["train"], **(train_kwargs or {})}
     res = train_model(model, train_loader, val_loader, verbose=verbose, **cfg)

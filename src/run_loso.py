@@ -19,9 +19,10 @@ Progress is saved after every fold, so an interrupted run resumes where it
 stopped. Writes results/metrics/<model>_loso.json and
 results/figures/<model>_loso_per_subject.png.
 
-Note: the MLP uses BatchNorm1d on flattened input, which errors if a final
-training batch has exactly one sample; LOSO fold sizes can trigger that, so it
-has only been run for the CNN.
+Note: the MLP uses BatchNorm1d on flattened input, which raises if a final
+training batch has exactly one sample, and LOSO fold sizes can produce one. The
+training loader in har_data.make_loaders now drops a singleton trailing batch,
+so LOSO runs for every model.
 """
 
 from __future__ import annotations
@@ -38,7 +39,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
 warnings.filterwarnings("ignore", message=".*pin_memory.*")
 
-from experiments import SPECS, run_once  # noqa: E402
+from experiments import RAW_MODELS, SPECS, run_once  # noqa: E402
 from har_data import (ACTIVITY_NAMES, DEFAULT_VAL_SUBJECTS, N_CLASSES,  # noqa: E402
                       WINDOW_LEN, N_CHANNELS, ChannelStandardizer, load_all,
                       load_subjects)
@@ -145,7 +146,9 @@ def plot(name: str, summary: dict) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    ap.add_argument("--model", choices=list(SPECS), required=True)
+    # Folds are rebuilt from the raw inertial signals, so only the raw-input
+    # models can be run here; the 561-feature MLP has no per-fold feature split.
+    ap.add_argument("--model", choices=list(RAW_MODELS), required=True)
     ap.add_argument("--subjects", type=int, nargs="+", default=None)
     ap.add_argument("--max-epochs", type=int, default=None)
     ap.add_argument("--out-dir", type=Path, default=METRICS_DIR)
